@@ -5,21 +5,9 @@ Subject: APPROVED resource request for project <%= info[:app_info].project %>
 Dear User from <%= info[:app_info].email %> :
 
 	Your resource request for project [<%= info[:app_info].project %>] has been [APPROVED] at [<%= info[:app_info].end_at %>].
-	Your application id is [<%= info[:app_info].id%>].
+	The application id is [<%= info[:app_info].id%>]. You can view it at <%= info[:application_link] %>
 
-	Your login info is as below:
-
-		login url: <%= info[:login] %>
-		username: <%= info[:username] %>
-		password: <%= info[:password] %>
-
-	Please reset your password once your login into system.
-
-	Network has been created with details below
-
-		vlan id
-		ip range
-		network
+	The resource allocation and project creation is in-process. Please wait for further mail notifications.
 	
 	Thanks!
 	OCP registry

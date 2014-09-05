@@ -67,7 +67,7 @@ module Ocp::Registry
                     dns_name_servers = Ocp::Registry::Common.parse_ip_addr_per_line settings['dns_name_servers']
 
                     # == step 1: create neutron network ==
-                    return  if !network_name
+                    return ret if !network_name
                     # what if we create a same-name network? result: same-name network can co-exist
                     ret['network'] = net = network.create_network(:name => network_name,  
                                                 :shared => false,

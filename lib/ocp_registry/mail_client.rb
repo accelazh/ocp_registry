@@ -30,7 +30,7 @@ module Ocp::Registry
 			}
 
 			@admin_emails = mail_config["admin_emails"] || DEFAULT_ADMIN_EMAIL
-
+			@mail_from = mail_config["from"] || DEFAULT_FROM 
 			@mail_queue = Queue.new
 
 			setup_senders
@@ -42,7 +42,7 @@ module Ocp::Registry
 		end
 
 		def send_mail(mail_info)
-			mail_info.merge!({ :from => DEFAULT_FROM }) 
+			mail_info.merge!({ :from => @mail_from }) 
 			@mail_queue << mail_info if mail_validated?(mail_info)
 		end
 

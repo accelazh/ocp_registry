@@ -34,6 +34,7 @@ mail:
   worker: 
   smtp_server: 
   port: 
+  from: # the mail address of ocp_registry, who sends mails
   helo: 
   username: 
   password: 

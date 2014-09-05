@@ -255,7 +255,7 @@ module Ocp::Registry
 						:application_link => gen_app_uri(app_id),
 						:applications_link => gen_app_uri
 					}
-					mail = prepare_mail_properties(:ticket_error_admin, @mail_manager.admin_emails, admin_msg)
+					mail = prepare_mail_properties(:approve_error_admin, @mail_manager.admin_emails, admin_msg)
 					@mail_manager.send_mail(mail)
 				end
 			end
@@ -483,6 +483,7 @@ module Ocp::Registry
 			if setting.is_a? String
 				setting = Yajl::load(setting)
 			end
+			return false, {:status => "error", :message => "The setting is malformatted"} unless setting.is_a? Hash
 
 			be_int = ["metadata_items",
 									"cores",

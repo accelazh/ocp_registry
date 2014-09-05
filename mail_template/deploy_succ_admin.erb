@@ -1,0 +1,15 @@
+From: <%= mail[:from]%>
+To: <%= mail[:to].kind_of?(Array)? mail[:to].join(";") : mail[:to]%>
+Subject: DEPLOY SUCCESS resource request for project <%= info[:app_info].project %>
+
+Dear Administrator :
+
+    The resource request for project [<%= info[:app_info].project %>] has been [DEPLOYED SUCCESSFULLY] at [<%= info[:app_info].end_at %>].
+    The application id is [<%= info[:app_info].id %>]. You can view it at [<%= info[:application_link] %>].
+
+    You can review all received applications from [<%= info[:applications_link]%>]
+
+    Thanks!
+    OCP registry
+
+(This email is auto-sent by system, please don't reply this mail)

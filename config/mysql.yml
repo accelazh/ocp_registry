@@ -1,0 +1,41 @@
+---
+loglevel: debug
+logfile: /var/log/ocp_registry/ocp_registry.log
+
+http:
+  base_url: localhost
+  port: 6799
+  user: admin
+  password: admin
+
+db:
+  adapter: mysql2
+  user: ocp_registry
+  password: 123work
+  host: 127.0.0.1
+  port: 3306
+  database: ocp_registry
+  connection_options:
+      max_connections: 32
+      pool_timeout: 10
+
+cloud:
+  login_url: https://horizonhavana.qa.webex.com/dashboard
+  plugin: openstack
+  default_role: Member
+  openstack:
+    auth_url: https://keystoneservicehavana.qa.webex.com:443/v2.0/
+    username: admin # TODO should I use admin tenant/user?
+    api_key: ocpchinalab
+    tenant: admin
+
+mail:
+  admin_emails: [ bigzhao@qa.webex.com, bigzhao@cisco.com, fanguo@cisco.com, liping@cisco.com, yizh2@cisco.com ]
+  worker: 1
+  smtp_server: 127.0.0.1
+  port: 25
+  from: ocp_registry@qa.webex.com
+  helo: ocp.com
+  username: # keep it empty
+  password: # keep it empty
+  authentication: # keep it empty

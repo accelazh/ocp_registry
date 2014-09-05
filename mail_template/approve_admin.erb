@@ -5,9 +5,12 @@ Subject: APPROVED resource request for project <%= info[:app_info].project %>
 Dear Administrator :
 
 	The resource request for project [<%= info[:app_info].project %>] has been [APPROVED] at [<%= info[:app_info].end_at %>].
-	The application id is [<%= info[:app_info].id%>].
+	The application id is [<%= info[:app_info].id%>]. You can view it at [<%= info[:application_link] %>]
+	
+    You can review all received applications from [<%= info[:applications_link]%>]
 
-	You can review all received applications from <%= info[:applications_link]%>
+    A Remedy ticket has been submitted to apply for network resources required by this project. 
+    View it at [<%= info[:ticket] %>]
 
 	Thanks!
 	OCP registry
